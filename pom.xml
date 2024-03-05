@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.beantastic</groupId>
-    <artifactId>api</artifactId>
+    <artifactId>bean-tastic-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>api</name>
-    <description>api</description>
+    <name>bean-tastic-api</name>
+    <description>bean-tastic-api</description>
     <properties>
         <java.version>21</java.version>
     </properties>
