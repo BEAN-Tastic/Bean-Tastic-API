@@ -1,4 +1,4 @@
-package com.beantastic.api;
+package com.beantastic.api.models.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -5,6 +5,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import com.beantastic.api.models.entities.BeanClass;
+import com.beantastic.api.models.entities.BeanClassStatistics;
+import com.beantastic.api.models.entities.StatisticType;
+import com.beantastic.api.repositories.BeanClassRepository;
+import com.beantastic.api.repositories.BeanClassStatisticsRepository;
+import com.beantastic.api.repositories.StatisticTypeRepository;
+
 @Component
 public class DatabaseLoader {
 

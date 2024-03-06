@@ -1,9 +1,10 @@
 package com.beantastic.api.controllers;
 
-import com.beantastic.api.BeanClass;
-import com.beantastic.api.BeanClassRepository;
-import com.beantastic.api.BeanClassStatistics;
-import com.beantastic.api.BeanClassStatisticsRepository;
+import com.beantastic.api.models.entities.BeanClass;
+import com.beantastic.api.models.entities.BeanClassStatistics;
+import com.beantastic.api.repositories.BeanClassRepository;
+import com.beantastic.api.repositories.BeanClassStatisticsRepository;
+
 import java.util.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

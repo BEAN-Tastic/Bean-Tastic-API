@@ -1,4 +1,4 @@
-package com.beantastic.api;
+package com.beantastic.api.models.entities;
 
 import java.util.*;
 import lombok.*;
@@ -8,19 +8,19 @@ import jakarta.persistence.*;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-public class BeanClass {
+public class StatisticType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int beanClassID;
+    private int statisticTypeID;
 
     private String name;
 
     private String description;
 
-    @OneToMany(mappedBy = "beanClass")
-    private Set<BeanClassStatistics> beanClassStatistics;
+    @OneToMany(mappedBy = "statisticType")
+    Set<BeanClassStatistics> beanClassStatistics;
 
-    public BeanClass(String name, String description) {
+    public StatisticType(String name, String description) {
         this.name = name;
         this.description = description;
     }
