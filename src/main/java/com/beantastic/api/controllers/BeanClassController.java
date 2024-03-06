@@ -3,8 +3,8 @@ package com.beantastic.api.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.beantastic.api.dao.BeanClassRepository;
 import com.beantastic.api.models.entities.BeanClass;
-import com.beantastic.api.repositories.BeanClassRepository;
 
 @RestController
 public class BeanClassController {
@@ -18,8 +18,7 @@ public class BeanClassController {
 
     @GetMapping("/getBeanClasses")
     public Iterable<BeanClass> getAllBeanClasses() {
-
-        return beanClassRepository.findAll()::iterator;
+        return beanClassRepository.findAll();
     }
 
 }

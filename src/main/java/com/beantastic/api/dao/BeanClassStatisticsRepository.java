@@ -1,4 +1,4 @@
-package com.beantastic.api.repositories;
+package com.beantastic.api.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
