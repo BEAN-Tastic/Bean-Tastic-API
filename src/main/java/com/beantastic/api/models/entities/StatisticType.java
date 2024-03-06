@@ -5,10 +5,7 @@ import lombok.*;
 import jakarta.persistence.*;
 
 @Data
-@Setter
-@Getter
 @EqualsAndHashCode
-@ToString
 @Entity
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
