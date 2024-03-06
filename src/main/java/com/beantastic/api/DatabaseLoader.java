@@ -1,5 +1,7 @@
 package com.beantastic.api;
 
+import java.util.HashSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +11,7 @@ import com.beantastic.api.dao.BeanClassRepository;
 import com.beantastic.api.dao.BeanClassStatisticsRepository;
 import com.beantastic.api.dao.StatisticTypeRepository;
 import com.beantastic.api.models.entities.BeanClass;
-import com.beantastic.api.models.entities.BeanClassStatistics;
+import com.beantastic.api.models.entities.BeanClassStatistic;
 import com.beantastic.api.models.entities.StatisticType;
 
 @Component
@@ -42,12 +44,13 @@ public class DatabaseLoader {
             // Create and save the bean class
             BeanClass greenBean = new BeanClass("Green Bean", "tasty");
 
+            greenBean.setBeanClassStatistics(new HashSet<>());
             greenBean = beanClassRepository.save(greenBean);
 
             // Create and save bean class statistics (junction table)
-            BeanClassStatistics stat1 = new BeanClassStatistics(greenBean, stat1Type, 14);
-            BeanClassStatistics stat2 = new BeanClassStatistics(greenBean, stat2Type, 14);
-            BeanClassStatistics stat3 = new BeanClassStatistics(greenBean, stat3Type, 14);
+            BeanClassStatistic stat1 = new BeanClassStatistic(greenBean, stat1Type, 14);
+            BeanClassStatistic stat2 = new BeanClassStatistic(greenBean, stat2Type, 20);
+            BeanClassStatistic stat3 = new BeanClassStatistic(greenBean, stat3Type, 25);
 
             beanClassStatisticsRepository.save(stat1);
             beanClassStatisticsRepository.save(stat2);

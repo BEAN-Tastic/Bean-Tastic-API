@@ -22,7 +22,7 @@ public class StatisticType {
     private String description;
 
     @OneToMany(mappedBy = "statisticType")
-    Set<BeanClassStatistics> beanClassStatistics;
+    Set<BeanClassStatistic> beanClassStatistics;
 
     public StatisticType(String name, String description) {
         this.name = name;

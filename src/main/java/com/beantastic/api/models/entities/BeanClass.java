@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 @Data
 @Entity
+@EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
 public class BeanClass {
@@ -17,8 +18,8 @@ public class BeanClass {
 
     private String description;
 
-    @OneToMany(mappedBy = "beanClass")
-    private Set<BeanClassStatistics> beanClassStatistics;
+    @OneToMany(mappedBy = "beanClass", fetch = FetchType.EAGER)
+    private Set<BeanClassStatistic> beanClassStatistics;
 
     public BeanClass(String name, String description) {
         this.name = name;

@@ -1,13 +1,16 @@
 package com.beantastic.api.models.entities;
 
+import java.util.Objects;
+
 import jakarta.persistence.*;
 import lombok.*;
 
 @Data
 @Entity
+@EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-public class BeanClassStatistics {
+public class BeanClassStatistic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int beanClassStatisticsID;
@@ -22,7 +25,7 @@ public class BeanClassStatistics {
 
     private int points;
 
-    public BeanClassStatistics(BeanClass beanClass, StatisticType statisticType, int points) {
+    public BeanClassStatistic(BeanClass beanClass, StatisticType statisticType, int points) {
         this.beanClass = beanClass;
         this.statisticType = statisticType;
         this.points = points;
