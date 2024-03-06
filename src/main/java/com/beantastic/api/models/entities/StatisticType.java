@@ -1,6 +1,5 @@
 package com.beantastic.api.models.entities;
 
-import java.util.*;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -20,9 +19,6 @@ public class StatisticType {
 
     @Column
     private String description;
-
-    @OneToMany(mappedBy = "statisticType")
-    Set<BeanClassStatistic> beanClassStatistics;
 
     public StatisticType(String name, String description) {
         this.name = name;

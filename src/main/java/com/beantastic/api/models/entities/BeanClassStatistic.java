@@ -1,7 +1,5 @@
 package com.beantastic.api.models.entities;
 
-import java.util.Objects;
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,14 +11,15 @@ import lombok.*;
 public class BeanClassStatistic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private int beanClassStatisticsID;
 
     @ManyToOne
-    @JoinColumn(name = "beanClassID")
+    @JoinColumn
     private BeanClass beanClass;
 
     @ManyToOne
-    @JoinColumn(name = "statisticTypeID")
+    @JoinColumn
     private StatisticType statisticType;
 
     private int points;
