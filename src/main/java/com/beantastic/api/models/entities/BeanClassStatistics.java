@@ -20,12 +20,12 @@ public class BeanClassStatistics {
     @JoinColumn(name = "statisticTypeID")
     private StatisticType statisticType;
 
-    private int power;
+    private int points;
 
-    public BeanClassStatistics(BeanClass beanClass, StatisticType statisticType, int power) {
+    public BeanClassStatistics(BeanClass beanClass, StatisticType statisticType, int points) {
         this.beanClass = beanClass;
         this.statisticType = statisticType;
-        this.power = power;
+        this.points = points;
     }
 
 }

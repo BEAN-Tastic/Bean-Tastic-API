@@ -31,9 +31,9 @@ public class DatabaseLoader {
     public CommandLineRunner init() {
         return args -> {
             // Create and save the 3 statistic types
-            StatisticType stat1Type = new StatisticType("Health", "The health power");
-            StatisticType stat2Type = new StatisticType("Damage", "The attack power");
-            StatisticType stat3Type = new StatisticType("Defense", "The block power");
+            StatisticType stat1Type = new StatisticType("Health", "The health points");
+            StatisticType stat2Type = new StatisticType("Damage", "The attack points");
+            StatisticType stat3Type = new StatisticType("Defense", "The block points");
 
             stat1Type = statisticTypeRepository.save(stat1Type);
             stat2Type = statisticTypeRepository.save(stat2Type);
