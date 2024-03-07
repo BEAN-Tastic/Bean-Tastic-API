@@ -11,7 +11,6 @@ public class BeanClassStatistic {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int beanClassStatisticsId;
 
-    @ManyToOne
     private BeanClass beanClass;
 
     @ManyToOne

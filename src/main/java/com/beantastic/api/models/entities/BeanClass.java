@@ -1,6 +1,7 @@
 package com.beantastic.api.models.entities;
 
 import lombok.*;
+import java.util.*;
 import jakarta.persistence.*;
 
 @Data
@@ -14,4 +15,7 @@ public class BeanClass {
     private String name;
 
     private String description;
+
+    @OneToMany
+    private Set<BeanClassStatistic> BeanClassStatistics;
 }
