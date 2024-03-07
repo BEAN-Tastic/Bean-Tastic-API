@@ -17,5 +17,5 @@ public class BeanClass {
     private String description;
 
     @OneToMany
-    private Set<BeanClassStatistic> beanClassStatistics;
+    private List<BeanClassStatistic> beanClassStatistics;
 }
