@@ -16,7 +16,7 @@ public class BeanClassController {
 
     }
 
-    @GetMapping("/getBeanClasses")
+    @GetMapping("/beanClasses")
     public Iterable<BeanClass> getAllBeanClasses() {
         return beanClassRepository.findAll();
     }
