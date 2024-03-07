@@ -3,6 +3,8 @@ package com.beantastic.api.models.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 @Table
@@ -14,6 +16,9 @@ public class Item {
 
     @ManyToOne
     private ItemQuality itemQuality;
+
+    @OneToMany
+    private List<ItemStatistic> itemStatistics;
 
     private String name;
 

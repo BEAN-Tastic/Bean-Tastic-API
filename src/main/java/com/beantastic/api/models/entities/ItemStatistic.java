@@ -13,9 +13,6 @@ public class ItemStatistic {
     private int itemStatisticId;
 
     @ManyToOne
-    private Item item;
-
-    @ManyToOne
     private StatisticType statisticType;
 
     private String name;
