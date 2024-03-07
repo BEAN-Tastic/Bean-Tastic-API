@@ -1,20 +1,21 @@
 package com.beantastic.api.models.entities;
 
+import lombok.*;
+import java.util.*;
 import jakarta.persistence.*;
-
-import lombok.Data;
-
 
 @Data
 @Entity
 @Table
-public class StatisticType {
+public class BeanClass {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int statisticTypeId;
+    private int beanClassId;
 
     private String name;
 
     private String description;
 
+    @OneToMany
+    private List<BeanClassStatistic> beanClassStatistics;
 }
