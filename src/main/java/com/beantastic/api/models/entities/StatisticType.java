@@ -1,7 +1,9 @@
 package com.beantastic.api.models.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+
+import lombok.Data;
+
 
 @Data
 @Entity
