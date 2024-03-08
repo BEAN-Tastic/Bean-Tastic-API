@@ -13,12 +13,6 @@ public class BeanClassDTO {
 
     private List<Map<String, Integer>> beanClassStatistics;
 
-    public BeanClassDTO(String name, String description, List<Map<String, Integer>> beanClassStatistics) {
-        this.name = name;
-        this.description = description;
-        this.beanClassStatistics = beanClassStatistics;
-    }
-
     public BeanClassDTO(BeanClass beanClass) {
         List<Map<String, Integer>> statsList = new ArrayList<>();
         for (BeanClassStatistic entry : beanClass.getBeanClassStatistics()) {
