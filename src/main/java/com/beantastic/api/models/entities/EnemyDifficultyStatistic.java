@@ -6,7 +6,7 @@ import lombok.*;
 @Data
 @Entity
 @Table
-public class EnemyDifficultyStatistics {
+public class EnemyDifficultyStatistic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +15,6 @@ public class EnemyDifficultyStatistics {
     @ManyToOne
     private StatisticType statisticType;
 
-    private int enemyDifficultyId;
+    private int points;
 
 }

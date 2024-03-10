@@ -12,9 +12,6 @@ public class EnemyStatisticModifier {
     private int enemyStatisticModifierId;
 
     @ManyToOne
-    private Enemy enemy;
-
-    @ManyToOne
     private StatisticType statisticType;
 
     private int points;

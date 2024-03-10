@@ -1,5 +1,7 @@
 package com.beantastic.api.models.entities;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,4 +18,6 @@ public class EnemyDifficulty {
 
     private String description;
 
+    @OneToMany
+    List<EnemyDifficultyStatistic> enemyDifficultyStatistics;
 }
