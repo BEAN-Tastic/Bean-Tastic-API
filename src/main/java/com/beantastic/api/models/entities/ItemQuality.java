@@ -9,7 +9,7 @@ import lombok.Data;
 public class ItemQuality {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int itemQualityId;
 
     private String name;

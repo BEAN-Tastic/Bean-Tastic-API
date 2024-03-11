@@ -9,7 +9,7 @@ import lombok.*;
 public class EnemyDifficultyStatistic {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int enemyDifficultyStatisticId;
 
     @ManyToOne

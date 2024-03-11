@@ -8,7 +8,7 @@ import lombok.*;
 @Table
 public class BeanClassStatistic {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int beanClassStatisticsId;
 
     @ManyToOne

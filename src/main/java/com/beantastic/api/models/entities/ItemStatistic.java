@@ -9,7 +9,7 @@ import lombok.Data;
 public class ItemStatistic {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int itemStatisticId;
 
     @ManyToOne

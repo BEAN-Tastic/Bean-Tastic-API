@@ -9,7 +9,7 @@ import lombok.*;
 public class ActionType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int actionTypeId;
 
     private String description;

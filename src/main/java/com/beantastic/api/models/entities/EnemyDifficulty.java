@@ -11,7 +11,7 @@ import lombok.*;
 public class EnemyDifficulty {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int enemyDifficultyId;
 
     private String name;

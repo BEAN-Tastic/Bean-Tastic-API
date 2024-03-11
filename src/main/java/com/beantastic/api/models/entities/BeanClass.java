@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 @Table
 public class BeanClass {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int beanClassId;
 
     private String name;

@@ -9,7 +9,7 @@ import lombok.*;
 @Table
 public class Enemy {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int enemyId;
 
     private String name;
