@@ -2,32 +2,27 @@ package com.beantastic.api.models.dto;
 
 import java.util.*;
 
-import com.beantastic.api.models.entities.BeanClassStatistic;
 import com.beantastic.api.models.entities.Enemy;
 import com.beantastic.api.models.entities.EnemyAction;
 import com.beantastic.api.models.entities.EnemyDifficultyStatistic;
 import com.beantastic.api.models.entities.EnemyStatisticModifier;
 import com.beantastic.api.models.entities.StatisticType;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Data;
+
+@Data
 public class EnemyDTO {
 
-    @JsonProperty("name")
     private String name;
 
-    @JsonProperty("description")
     private String description;
 
-    @JsonProperty("difficulty")
     private String difficulty;
 
-    @JsonProperty("difficultyStats")
     private List<Map<String, Integer>> difficultyStats;
 
-    @JsonProperty("actions")
     private List<Map<String, Object>> actions;
 
-    @JsonProperty("statisticModifiers")
     private List<Map<String, Integer>> statisticModifiers;
 
     public EnemyDTO(Enemy enemy) {

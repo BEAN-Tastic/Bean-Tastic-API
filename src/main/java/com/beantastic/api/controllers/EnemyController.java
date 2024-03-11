@@ -5,7 +5,6 @@ import com.beantastic.api.models.dto.EnemyDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,15 +21,17 @@ public class EnemyController {
     }
 
     @GetMapping(path = "/enemies")
-    public ResponseEntity<?> getEnemies() {
+    public ResponseEntity getEnemies() {
 
         try {
-            List<EnemyDTO> enemyDTOList = StreamSupport.stream(enemyRepository.findAll().spliterator(), false)
+            List<EnemyDTO> enemyDTOList = enemyRepository.findAll()
+                    .stream()
                     .map(EnemyDTO::new)
                     .collect(Collectors.toList());
+
             return ResponseEntity.ok(enemyDTOList);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
 
         }
     }
