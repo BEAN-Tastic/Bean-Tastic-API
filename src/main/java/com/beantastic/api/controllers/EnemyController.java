@@ -2,6 +2,7 @@ package com.beantastic.api.controllers;
 
 import com.beantastic.api.dao.EnemyRepository;
 import com.beantastic.api.models.dto.EnemyDTO;
+import com.beantastic.api.utils.DTOConverter;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,11 +25,9 @@ public class EnemyController {
     public ResponseEntity getEnemies() {
 
         try {
-            List<EnemyDTO> enemyDTOList = enemyRepository.findAll()
-                    .stream()
-                    .map(EnemyDTO::new)
+            List<EnemyDTO> enemyDTOList = enemyRepository.findAll().stream()
+                    .map(enemy -> DTOConverter.enemyToEnemyDTO(enemy))
                     .collect(Collectors.toList());
-
             return ResponseEntity.ok(enemyDTOList);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());

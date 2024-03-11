@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 
 import com.beantastic.api.dao.BeanClassRepository;
 import com.beantastic.api.models.dto.BeanClassDTO;
+import com.beantastic.api.utils.DTOConverter;
 
 @RestController
 public class BeanClassController {
@@ -27,7 +28,7 @@ public class BeanClassController {
 
         try {
             List<BeanClassDTO> beanDTOClasses = beanClassRepository.findAll().stream()
-                    .map(BeanClassDTO::new)
+                    .map(bean -> DTOConverter.beanToBeanDTO(bean))
                     .collect(Collectors.toList());
             return ResponseEntity.ok(beanDTOClasses);
         } catch (Exception e) {
