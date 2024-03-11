@@ -1,20 +1,19 @@
 package com.beantastic.api.models.dto;
 
 import java.util.*;
+import lombok.Data;
 
 import com.beantastic.api.models.entities.BeanClass;
 import com.beantastic.api.models.entities.BeanClassStatistic;
 import com.beantastic.api.models.entities.StatisticType;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Data
 public class BeanClassDTO {
-    @JsonProperty("name")
+
     private String name;
 
-    @JsonProperty("description")
     private String description;
 
-    @JsonProperty("beanClassStatistics")
     private List<Map<String, Integer>> beanClassStatistics;
 
     public BeanClassDTO(BeanClass beanClass) {

@@ -23,15 +23,15 @@ public class BeanClassController {
     }
 
     @GetMapping("/beanClasses")
-    public ResponseEntity<?> getAllBeanClasses() {
+    public ResponseEntity getAllBeanClasses() {
 
         try {
-            List<BeanClassDTO> beanDTOClasses = StreamSupport.stream(beanClassRepository.findAll().spliterator(), false)
+            List<BeanClassDTO> beanDTOClasses = beanClassRepository.findAll().stream()
                     .map(BeanClassDTO::new)
                     .collect(Collectors.toList());
             return ResponseEntity.ok(beanDTOClasses);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
 
         }
 
