@@ -1,10 +1,16 @@
 package com.beantastic.api.controllers;
 
+import java.util.*;
+import java.util.stream.*;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import com.beantastic.api.dao.BeanClassRepository;
-import com.beantastic.api.models.entities.BeanClass;
+import com.beantastic.api.models.dto.BeanClassDTO;
 
 @RestController
 public class BeanClassController {
@@ -17,8 +23,17 @@ public class BeanClassController {
     }
 
     @GetMapping("/beanClasses")
-    public Iterable<BeanClass> getAllBeanClasses() {
-        return beanClassRepository.findAll();
-    }
+    public ResponseEntity getAllBeanClasses() {
 
+        try {
+            List<BeanClassDTO> beanDTOClasses = beanClassRepository.findAll().stream()
+                    .map(BeanClassDTO::new)
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(beanDTOClasses);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
+
+        }
+
+    }
 }
