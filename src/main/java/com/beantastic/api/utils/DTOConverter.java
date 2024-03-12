@@ -22,7 +22,7 @@ public class DTOConverter {
 
         }
 
-        BeanClassDTO beanClassDTO = new BeanClassDTO(beanClass.getDescription(), beanClass.getDescription(), statsList);
+        BeanClassDTO beanClassDTO = new BeanClassDTO(beanClass.getName(), beanClass.getDescription(), statsList);
         return beanClassDTO;
     }
 

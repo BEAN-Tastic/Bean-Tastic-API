@@ -6,10 +6,11 @@ import lombok.*;
 
 @Data
 @Entity
-@Table
+@Table(name = "enemy")
 public class Enemy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "enemyid")
     private int enemyId;
 
     private String name;
@@ -17,11 +18,14 @@ public class Enemy {
     private String description;
 
     @ManyToOne
+    @JoinColumn(name = "enemydifficultyid")
     private EnemyDifficulty enemyDifficulty;
 
     @OneToMany
+    @JoinColumn(name = "enemyactionid")
     private List<EnemyAction> enemyActions;
 
-    @ManyToMany
+    @OneToMany
+    @JoinColumn(name = "enemystatisticmodifierid")
     private List<EnemyStatisticModifier> enemyStatisticModifiers;
 }

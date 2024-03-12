@@ -6,11 +6,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table
+@Table(name = "statistictype")
 public class StatisticType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int statisticTypeId;
+    @Column(name = "statistictypeid")
+    private int statistictypeid;
 
     private String name;
 

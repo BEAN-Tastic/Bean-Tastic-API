@@ -7,11 +7,12 @@ import lombok.*;
 
 @Data
 @Entity
-@Table
+@Table(name = "enemydifficulty")
 public class EnemyDifficulty {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "enemydifficultyid")
     private int enemyDifficultyId;
 
     private String name;
@@ -19,5 +20,6 @@ public class EnemyDifficulty {
     private String description;
 
     @OneToMany
+    @JoinColumn(name = "enemydifficultystatiticid")
     List<EnemyDifficultyStatistic> enemyDifficultyStatistics;
 }
