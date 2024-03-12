@@ -13,6 +13,6 @@ public class ItemDTO {
 
     private String quality;
 
-    private List<Map<String, Integer>> itemstatistics;
+    private List<Map<String, Integer>> itemStatistics;
 
 }
