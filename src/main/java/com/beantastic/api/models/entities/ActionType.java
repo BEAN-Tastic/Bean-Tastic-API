@@ -5,11 +5,12 @@ import lombok.*;
 
 @Data
 @Entity
-@Table
+@Table(name = "actiontype")
 public class ActionType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "actiontypeid")
     private int actionTypeId;
 
     private String description;

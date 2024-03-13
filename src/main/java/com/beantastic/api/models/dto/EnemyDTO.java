@@ -17,7 +17,7 @@ public class EnemyDTO {
 
     private List<Map<String, Integer>> difficultyStatistics;
 
-    private List<Map<String, Object>> actions;
+    private List<String> actions;
 
     private List<Map<String, Integer>> statisticModifiers;
 

@@ -5,11 +5,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table
+@Table(name = "itemquality")
 public class ItemQuality {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "itemqualityid")
     private int itemQualityId;
 
     private String name;

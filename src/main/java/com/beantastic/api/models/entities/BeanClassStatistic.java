@@ -5,13 +5,15 @@ import lombok.*;
 
 @Data
 @Entity
-@Table
+@Table(name = "beanclassstatistic")
 public class BeanClassStatistic {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "beanclassstatisticid")
     private int beanClassStatisticsId;
 
     @ManyToOne
+    @JoinColumn(name = "statistictypeid")
     private StatisticType statisticType;
 
     private int points;

@@ -6,10 +6,11 @@ import jakarta.persistence.*;
 
 @Data
 @Entity
-@Table
+@Table(name = "beanclass")
 public class BeanClass {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "beanclassid")
     private int beanClassId;
 
     private String name;
@@ -17,5 +18,6 @@ public class BeanClass {
     private String description;
 
     @OneToMany
+    @JoinColumn(name = "beanclassid")
     private List<BeanClassStatistic> beanClassStatistics;
 }

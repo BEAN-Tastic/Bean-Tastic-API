@@ -7,17 +7,20 @@ import java.util.List;
 
 @Data
 @Entity
-@Table
+@Table(name = "item")
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "itemid")
     private int itemId;
 
     @ManyToOne
+    @JoinColumn(name = "itemqualityid")
     private ItemQuality itemQuality;
 
     @OneToMany
+    @JoinColumn(name = "itemid")
     private List<ItemStatistic> itemStatistics;
 
     private String name;

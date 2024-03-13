@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 
 import lombok.Data;
 
-
 @Data
 @Entity
-@Table
+@Table(name = "statistictype")
 public class StatisticType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int statisticTypeId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "statistictypeid")
+    private int statistictypeid;
 
     private String name;
 

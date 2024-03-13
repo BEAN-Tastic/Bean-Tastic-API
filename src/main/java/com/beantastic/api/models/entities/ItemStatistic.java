@@ -5,14 +5,16 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table
+@Table(name = "itemstatistic")
 public class ItemStatistic {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "itemstatisticid")
     private int itemStatisticId;
 
     @ManyToOne
+    @JoinColumn(name = "statistictypeid")
     private StatisticType statisticType;
 
     private String name;
