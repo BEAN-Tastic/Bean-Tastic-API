@@ -10,8 +10,8 @@ public class EnemyDifficultyStatistic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "enemydifficultystatiticid")
-    private int enemydifficultystatiticid;
+    @Column(name = "enemydifficultystatisticid")
+    private int enemyDifficultyStatisticId;
 
     @ManyToOne
     @JoinColumn(name = "statistictypeid")

@@ -20,6 +20,6 @@ public class EnemyDifficulty {
     private String description;
 
     @OneToMany
-    @JoinColumn(name = "enemydifficultystatiticid")
+    @JoinColumn(name = "enemydifficultyid")
     List<EnemyDifficultyStatistic> enemyDifficultyStatistics;
 }

@@ -13,10 +13,6 @@ public class EnemyAction {
     private int enemyActionId;
 
     @ManyToOne
-    @JoinColumn(name = "statistictypeid")
-    private StatisticType statisticType;
-
-    @ManyToOne
     @JoinColumn(name = "actiontypeid")
     private ActionType actionType;
 

@@ -26,6 +26,6 @@ public class Enemy {
     private List<EnemyAction> enemyActions;
 
     @OneToMany
-    @JoinColumn(name = "enemystatisticmodifierid")
+    @JoinColumn(name = "enemyid")
     private List<EnemyStatisticModifier> enemyStatisticModifiers;
 }

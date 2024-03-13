@@ -13,7 +13,7 @@ public class EnemyStatisticModifier {
     private int enemyStatisticModifierId;
 
     @ManyToOne
-    @JoinColumn(name = "statisticid")
+    @JoinColumn(name = "statistictypeid")
     private StatisticType statisticType;
 
     private int points;
