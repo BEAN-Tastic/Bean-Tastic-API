@@ -20,7 +20,7 @@ public class Item {
     private ItemQuality itemQuality;
 
     @OneToMany
-    @JoinColumn(name = "itemstatisticid")
+    @JoinColumn(name = "itemid")
     private List<ItemStatistic> itemStatistics;
 
     private String name;
