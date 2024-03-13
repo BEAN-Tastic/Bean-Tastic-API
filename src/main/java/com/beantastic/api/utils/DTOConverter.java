@@ -59,14 +59,9 @@ public class DTOConverter {
             difficultyStatisticsList.add(statEntry);
         }
 
-        List<Map<String, Object>> actionsList = new ArrayList<>();
+        List<String> actionsList = new ArrayList<>();
         for (EnemyAction action : enemy.getEnemyActions()) {
-            Map<String, Object> actionMap = new HashMap<>();
-            actionMap.put("name", action.getName());
-            actionMap.put("description", action.getDescription());
-            actionMap.put("statisticType", action.getStatisticType().getName());
-            actionMap.put("multiplier", action.getActionType().getMultiplier());
-            actionsList.add(actionMap);
+            actionsList.add(action.getDescription());
         }
 
         List<Map<String, Integer>> statisticModifiersList = new ArrayList<>();
@@ -79,6 +74,7 @@ public class DTOConverter {
 
             statisticModifiersList.add(statEntry);
         }
+
         EnemyDTO enemyDTO = new EnemyDTO(enemy.getName(), enemy.getDescription(), enemy.getEnemyDifficulty().getName(),
                 difficultyStatisticsList, actionsList, statisticModifiersList);
 
