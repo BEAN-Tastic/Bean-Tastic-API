@@ -147,6 +147,7 @@ resource "aws_s3_object" "app_jar" {
   bucket = aws_s3_bucket.beanstalk_bucket.id
   key    = "beanstalk-api.jar"
   source = "release/beanstalk-api.jar"
+  etag = filemd5("release/beanstalk-api.jar")
   depends_on = [aws_s3_bucket.beanstalk_bucket]
 }
 
