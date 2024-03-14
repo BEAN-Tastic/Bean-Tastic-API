@@ -160,7 +160,6 @@ resource "aws_elastic_beanstalk_application" "app" {
 resource "random_uuid" "random_generator" {
 }
 
-
 resource "aws_elastic_beanstalk_application_version" "beantastic_api_version" {
   application = aws_elastic_beanstalk_application.app.name
   bucket      = aws_s3_bucket.beanstalk_bucket.id
