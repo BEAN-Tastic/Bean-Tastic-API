@@ -38,7 +38,7 @@ jobs:
         shell: bash
         run: |
           echo "Configure Secrets.json"
-          echo -e "{\n  \"clientId\": \"${{ secrets.CLIENT_ID }},\n  \"clientSecret": \"${{ secrets.CLIENT_SECRET }}\"\n}" > src/main/resources/Secrets.json
+          echo -e "\nspring.security.oauth2.client.registration.github.client-id=${{ secrets.CLIENT_ID }}\nspring.security.oauth2.client.registration.github.client-secret=${{ secrets.CLIENT_SECRET }}" >> src/main/resources/application.properties
 
       - name: Package Jar
         run: mvn -B package --file pom.xml -DskipTests
