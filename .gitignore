@@ -162,6 +162,3 @@ buildNumber.properties
 .ionide
 
 infrastructure/release
-
-### SECRETS ###
-/src/main/resources/Secrets.json
