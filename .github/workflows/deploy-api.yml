@@ -75,4 +75,4 @@ jobs:
         id: update-version
         run: |
           version_label="app-$(date +'%Y%m%d%H%M%S')"
-          aws elasticbeanstalk update-environment --application-name beantastic-api --environment-name production eu-west-1 --version-label "$version_label"
+          aws elasticbeanstalk update-environment --application-name beantastic-api --environment-name production  --region eu-west-1 --version-label "$version_label"
