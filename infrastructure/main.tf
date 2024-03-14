@@ -187,6 +187,7 @@ resource "aws_elastic_beanstalk_environment" "production_environment" {
     name      = "MaxSize"
     value     = "3"
   }
+
   setting {
     namespace = "aws:elasticbeanstalk:environment"
     name      = "EnvironmentType"
