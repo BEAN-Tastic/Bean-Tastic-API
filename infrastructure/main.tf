@@ -157,19 +157,10 @@ resource "aws_elastic_beanstalk_application" "app" {
   description = "Beantastic API"
 }
 
-resource "aws_elastic_beanstalk_application_version" "beantastic_api_version" {
-  application = aws_elastic_beanstalk_application.app.name
-  bucket      = aws_s3_bucket.beanstalk_bucket.id
-  key         = aws_s3_object.app_jar.id
-  name        = "beantastic_api_version-${format("YYYYMMDDHHMMSS", timestamp())}"
-}
-
-
 resource "aws_elastic_beanstalk_environment" "production_environment" {
   name        = "production"
   application = aws_elastic_beanstalk_application.app.name
   solution_stack_name = "64bit Amazon Linux 2023 v4.2.1 running Corretto 21"
-  version_label = aws_elastic_beanstalk_application_version.beantastic_api_version.name
 
   setting {
     namespace = "aws:ec2:vpc"
@@ -199,6 +190,12 @@ resource "aws_elastic_beanstalk_environment" "production_environment" {
     namespace = "aws:ec2:vpc"
     name      = "Subnets"
     value     = join(",", aws_db_subnet_group.beantastic_api_subnet_group.subnet_ids)
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:command"
+    name      = "IgnoreHealthCheck"
+    value     = "true"
   }
 
   setting {
