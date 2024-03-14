@@ -161,8 +161,9 @@ resource "aws_elastic_beanstalk_application_version" "beantastic_api_version" {
   application = aws_elastic_beanstalk_application.app.name
   bucket      = aws_s3_bucket.beanstalk_bucket.id
   key         = aws_s3_object.app_jar.id
-  name        = "beantastic_api_version-${format(timestamp(), "YYYYMMDDHHMMSS")}"
+  name        = "beantastic_api_version-${format("YYYYMMDDHHMMSS", timestamp())}"
 }
+
 
 resource "aws_elastic_beanstalk_environment" "production_environment" {
   name        = "production"
